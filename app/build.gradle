@@ -1,24 +1,25 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.3'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.1'
 
     defaultConfig {
         applicationId 'org.bubenheimer.dagger'
         minSdkVersion 24
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionName '1.0'
         versionCode 1
         resConfigs 'en', 'en-rUS'
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                includeCompileClasspath = false
-//                includeCompileClasspath = true
-            }
-        }
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                includeCompileClasspath = false
+////                includeCompileClasspath = true
+//            }
+//        }
     }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -30,9 +31,9 @@ android {
     }
 
     dependencies {
-        String daggerVersion = '2.11-rc1'
+        String daggerVersion = '2.11'
 
-        compile "com.google.dagger:dagger-android:${daggerVersion}"
+        implementation "com.google.dagger:dagger-android:${daggerVersion}"
         annotationProcessor "com.google.dagger:dagger-compiler:${daggerVersion}"
         annotationProcessor "com.google.dagger:dagger-android-processor:${daggerVersion}"
     }
